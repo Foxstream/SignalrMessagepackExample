@@ -69,11 +69,11 @@ namespace SignalrMessagepackExample
             [EnumeratorCancellation] CancellationToken cancellationToken)
         {
             var random = new Random();
-            var bytes = new byte[size];
             for (var i = 0; i < count; i++)
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
+                var bytes = new byte[size];
                 random.NextBytes(bytes);
                 yield return bytes;
 
